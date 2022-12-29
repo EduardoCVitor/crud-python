@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, form, create, view # Importando a função home do arquivo views que fica no app
+from app.views import home, form, create, view, edit, update
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'), # Quando inciada a URL, chama a home
     path('form/', form, name='form'), # Quando direcionado para o /form, chama o form 
     path('create/', create, name='create'), # Quando direcionado para o /create, chama o create 
-    path('view/<int:pk>/', view, name='view'), # Quando direcionado para o /view, chama a view 
+    path('view/<int:pk>/', view, name='view'),
+    path('edit/<int:pk>/', edit, name='edit'),
+    path('update/<int:pk>/', update, name='update'), 
 ]
