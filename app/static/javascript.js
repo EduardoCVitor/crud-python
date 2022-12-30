@@ -38,6 +38,7 @@
             ajax.send(data);
             //FUNCIONA PARA CADASTRO MAS ESTRAGA A VISUALIZACAO DA EDICAO
             form.reset();
+            
         }
         form.addEventListener('submit', sendForm, false);
     }
