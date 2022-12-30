@@ -14,39 +14,46 @@
     </div> 
 
     <div class="col-8 m-alto pt-3 pb-2 text-center">
-      <a href="/form" class="btn btn-success">Adicionar</a>
+        <a href="/form" class="btn btn-success">Adicionar</a>
+    </div> 
+<!--Com Busca-->
+    <div class="col-8 m-alto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
+        </form>
     </div> 
 
     <div class="col-8 m-alto pt-4 pb-2 text-center">
         <table class="table">
-            <thead class="table-dark">
-              <tr>
+          <thead class="table-dark">
+            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Modelo</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Ano</th>
                 <th scope="col">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for dbs in db %}
-              <tr> 
-                <th>{{dbs.id}}</th>
-                <td>{{dbs.modelo}}</td>
-                <td>{{dbs.marca}}</td>
-                <td>{{dbs.ano}}</td>
-                <td>
+            </tr>
+        </thead>
+        <tbody>
+          {% for dbs in db %}
+          <tr> 
+              <th>{{dbs.id}}</th>
+              <td>{{dbs.modelo}}</td>
+              <td>{{dbs.marca}}</td>
+              <td>{{dbs.ano}}</td>
+              <td>
                   <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                   <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
                   <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
-                </td>
-              </tr>
-              {% endfor %}
-             
-            </tbody>
+              </td>
+          </tr>
+          {% endfor %}
+         
+        </tbody>
         </table>
     </div> 
 
+<!-- Com Paginação
     <div class="pagination">
       {% if db.has_previous %}
           <a href="?page={{db.previous_page_number}}"> < </a>
@@ -57,7 +64,7 @@
       {% if db.has_next %}
       <a href="?page={{db.next_page_number}}"> > </a>
       {% endif %}
-    </div>
+    </div>-->
 
     {% load static %}
     <script src="{% static 'javascript.js' %}"></script>
